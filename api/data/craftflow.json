@@ -1,0 +1,260 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "María López",
+      "telefono": "987654321",
+      "direccion": "Lima"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos Ramírez",
+      "telefono": "985432109",
+      "direccion": "Chiclayo"
+    },
+    {
+      "id": 3,
+      "nombre": "Luis Mendoza",
+      "telefono": "984321098",
+      "direccion": "Ica"
+    },
+    {
+      "id": 4,
+      "nombre": "Sofía Vargas",
+      "telefono": "983210987",
+      "direccion": "Arequipa"
+    },
+    {
+      "id": 5,
+      "nombre": "Ana Torres",
+      "telefono": "985432109",
+      "direccion": "Trujillo"
+    },
+    {
+      "id": 6,
+      "nombre": "Diego Fernández",
+      "telefono": "987654326",
+      "direccion": "Lima"
+    },
+    {
+      "id": 7,
+      "nombre": "Valeria Castillo",
+      "telefono": "986543217",
+      "direccion": "Cusco"
+    },
+    {
+      "id": 8,
+      "nombre": "Jorge Quispe",
+      "telefono": "975432168",
+      "direccion": "Arequipa"
+    },
+    {
+      "id": 9,
+      "nombre": "Camila Rojas",
+      "telefono": "964321579",
+      "direccion": "Trujillo"
+    },
+    {
+      "id": 10,
+      "nombre": "Roberto Salazar",
+      "telefono": "953210487",
+      "direccion": "Piura"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Cerámica"
+    },
+    {
+      "id": 2,
+      "nombre": "Textiles"
+    },
+    {
+      "id": 3,
+      "nombre": "Madera"
+    },
+    {
+      "id": 4,
+      "nombre": "Joyería"
+    },
+    {
+      "id": 5,
+      "nombre": "Decoración"
+    },
+    {
+      "id": 6,
+      "nombre": "Tejidos"
+    },
+    {
+      "id": 7,
+      "nombre": "Cuero"
+    },
+    {
+      "id": 8,
+      "nombre": "Cerámica Decorativa"
+    },
+    {
+      "id": 9,
+      "nombre": "Arte Andino"
+    },
+    {
+      "id": 10,
+      "nombre": "Accesorios"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Taza artesanal de cerámica",
+      "precio": 25,
+      "categoriaId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Bufanda tejida de alpaca",
+      "precio": 65,
+      "categoriaId": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Caja decorativa de madera",
+      "precio": 45,
+      "categoriaId": 3
+    },
+    {
+      "id": 4,
+      "nombre": "Pulsera artesanal",
+      "precio": 35,
+      "categoriaId": 4
+    },
+    {
+      "id": 5,
+      "nombre": "Centro de mesa artesanal",
+      "precio": 55,
+      "categoriaId": 5
+    },
+    {
+      "id": 6,
+      "nombre": "Chullo tejido de alpaca",
+      "precio": 50,
+      "categoriaId": 6
+    },
+    {
+      "id": 7,
+      "nombre": "Cartera artesanal de cuero",
+      "precio": 120,
+      "categoriaId": 7
+    },
+    {
+      "id": 8,
+      "nombre": "Florero decorativo de cerámica",
+      "precio": 75,
+      "categoriaId": 8
+    },
+    {
+      "id": 9,
+      "nombre": "Cuadro andino artesanal",
+      "precio": 95,
+      "categoriaId": 9
+    },
+    {
+      "id": 10,
+      "nombre": "Collar artesanal de semillas",
+      "precio": 40,
+      "categoriaId": 10
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "clienteId": 1,
+      "productoId": 1,
+      "cantidad": 2,
+      "precioUnitario": 25,
+      "total": 50,
+      "estado": "PENDIENTE",
+      "fecha": "2026-08-12T12:52:41.942Z"
+    },
+    {
+      "id": 2,
+      "clienteId": 2,
+      "productoId": 2,
+      "cantidad": 1,
+      "precioUnitario": 65,
+      "total": 65,
+      "estado": "PENDIENTE",
+      "fecha": "2026-08-12T12:53:00.641Z"
+    },
+    {
+      "id": 3,
+      "clienteId": 4,
+      "productoId": 5,
+      "cantidad": 1,
+      "precioUnitario": 55,
+      "total": 55,
+      "estado": "ENTREGADO",
+      "fecha": "2026-08-12T12:54:47.577Z"
+    },
+    {
+      "id": 4,
+      "clienteId": 3,
+      "productoId": 4,
+      "cantidad": 2,
+      "precioUnitario": 35,
+      "total": 70,
+      "estado": "PENDIENTE",
+      "fecha": "2026-08-12T12:55:08.461Z"
+    },
+    {
+      "id": 5,
+      "clienteId": 5,
+      "productoId": 3,
+      "cantidad": 3,
+      "precioUnitario": 45,
+      "total": 135,
+      "estado": "PENDIENTE",
+      "fecha": "2026-08-12T12:56:01.209Z"
+    },
+    {
+      "id": 6,
+      "clienteId": 6,
+      "productoId": 6,
+      "cantidad": 2,
+      "precioUnitario": 50,
+      "total": 100,
+      "estado": "PENDIENTE",
+      "fecha": "2026-08-12T17:52:04.298Z"
+    },
+    {
+      "id": 7,
+      "clienteId": 7,
+      "productoId": 7,
+      "cantidad": 1,
+      "precioUnitario": 120,
+      "total": 120,
+      "estado": "ENTREGADO",
+      "fecha": "2026-08-12T17:52:26.941Z"
+    },
+    {
+      "id": 8,
+      "clienteId": 9,
+      "productoId": 9,
+      "cantidad": 1,
+      "precioUnitario": 95,
+      "total": 95,
+      "estado": "PENDIENTE",
+      "fecha": "2026-08-12T17:53:59.027Z"
+    },
+    {
+      "id": 9,
+      "clienteId": 10,
+      "productoId": 10,
+      "cantidad": 4,
+      "precioUnitario": 40,
+      "total": 160,
+      "estado": "ENTREGADO",
+      "fecha": "2026-08-12T17:54:21.142Z"
+    }
+  ]
+}

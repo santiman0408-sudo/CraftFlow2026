@@ -1,0 +1,15 @@
+{
+  "name": "craftflow-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API REST complementaria para CraftFlow. No modifica la persistencia SQLite de la app móvil.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

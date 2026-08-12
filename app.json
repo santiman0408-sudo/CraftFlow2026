@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "CraftFlow",
+    "slug": "craftflow",
+    "version": "1.0.0",
+    "description": "Aplicación móvil para la gestión de clientes, productos, categorías y pedidos de un emprendimiento artesanal.",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F4E9D8"
+    },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.craftflow.app"
+    },
+
+    "android": {
+      "package": "com.craftflow.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F4E9D8"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+
+    "plugins": [
+      "expo-sqlite",
+      "expo-font"
+    ]
+  }
+}
