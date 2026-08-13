@@ -1,860 +1,692 @@
-🎨 CraftFlow
+# 🛍️ CraftFlow
 
-Aplicación móvil para la gestión de pedidos de un emprendimiento artesanal, desarrollada con React Native, Expo SDK 54, TypeScript, SQLite y una estructura basada en Clean Architecture.
+### Sistema móvil para la gestión de productos y pedidos artesanales
 
-CraftFlow centraliza la gestión de clientes, productos, categorías y pedidos en una aplicación móvil, incorporando un dashboard de indicadores, persistencia local y un módulo de autenticación con inicio y cierre de sesión.
+<p align="center">
+  <strong>Aplicación móvil desarrollada con React Native + Expo + TypeScript</strong>
+</p>
 
-📱 Descripción del proyecto
+<p align="center">
+  Gestión de clientes · Categorías · Productos · Pedidos · Dashboard · API REST · SQLite
+</p>
 
-CraftFlow nace como solución para un emprendimiento artesanal que gestiona sus ventas y pedidos de manera manual. La aplicación permite organizar la información comercial desde un único entorno móvil.
+---
 
-El sistema permite:
+## 📌 Descripción
 
-Gestionar clientes.
+**CraftFlow** es una aplicación móvil orientada a la gestión integral de pedidos para negocios dedicados a la comercialización de productos artesanales.
 
-Gestionar productos.
+La aplicación permite administrar clientes, categorías, productos y pedidos desde una interfaz móvil, proporcionando un dashboard con indicadores de gestión y utilizando **SQLite para la persistencia local**.
 
-Gestionar categorías.
+El proyecto incorpora además una **API REST desarrollada con Node.js y Express**, permitiendo consultar y sincronizar información mediante endpoints HTTP.
 
-Registrar y administrar pedidos.
+La solución está diseñada para ejecutarse en dispositivos Android mediante **Expo / React Native**.
 
-Consultar indicadores del negocio.
+---
 
-Visualizar los últimos pedidos registrados.
+## 🎯 Objetivo del proyecto
 
-Iniciar sesión mediante credenciales.
+Desarrollar una aplicación móvil que permita centralizar y facilitar la gestión de pedidos de un negocio artesanal, reduciendo la dependencia de registros manuales y proporcionando información organizada para la toma de decisiones.
 
-Cerrar sesión desde el Dashboard.
+### Objetivos específicos
 
-Mantener la información de negocio almacenada localmente mediante SQLite.
+- Gestionar clientes.
+- Gestionar categorías.
+- Gestionar productos.
+- Registrar pedidos.
+- Consultar pedidos registrados.
+- Editar y visualizar el detalle de los pedidos.
+- Controlar el estado de los pedidos.
+- Visualizar indicadores mediante un dashboard.
+- Mantener información mediante SQLite.
+- Exponer información mediante una API REST.
+- Preparar una versión APK para Android.
 
-Trabajar sin depender de un servidor remoto para las operaciones principales.
+---
 
-🔐 Autenticación
+# 🚀 Funcionalidades
 
-CraftFlow incorpora un flujo de autenticación controlado mediante AuthContext.
+## 🔐 Autenticación
 
-Inicio de sesión
+- Inicio de sesión.
+- Validación de acceso.
+- Gestión de sesión.
+- Cierre de sesión.
 
-El usuario debe ingresar:
+## 👥 Gestión de clientes
 
-Usuario.
+- Registro de clientes.
+- Listado de clientes.
+- Consulta de información.
+- Edición de clientes.
+- Eliminación de clientes.
 
-Contraseña.
+## 🏷️ Gestión de categorías
 
-Las credenciales configuradas actualmente en el proyecto son:
+- Registro de categorías.
+- Listado de categorías.
+- Edición de categorías.
+- Eliminación de categorías.
 
-Usuario: admin
-Contraseña: CraftFlow2026
+## 📦 Gestión de productos
 
-Validaciones
+- Registro de productos.
+- Asociación con categorías.
+- Consulta de productos.
+- Edición de productos.
+- Eliminación de productos.
+- Gestión de precios.
 
-El formulario valida:
+## 🛒 Gestión de pedidos
 
-Usuario obligatorio.
+- Creación de pedidos.
+- Selección de cliente.
+- Selección de producto.
+- Definición de cantidad.
+- Cálculo del precio unitario.
+- Cálculo automático del total.
+- Control del estado del pedido.
+- Consulta del detalle.
+- Edición de pedidos.
 
-Contraseña obligatoria.
+## 📊 Dashboard
 
-Credenciales correctas.
+El dashboard permite visualizar indicadores como:
 
-Si las credenciales no son válidas, se muestra una notificación mediante AppSnackbar.
+- Total de pedidos.
+- Pedidos pendientes.
+- Pedidos entregados.
+- Ventas totales.
+- Productos vendidos.
 
-Cierre de sesión
+---
 
-Una vez autenticado, el usuario accede al Dashboard.
+# 🖥️ Pantallas principales
 
-En el encabezado se dispone de la opción:
+## Login
 
-Salir
+Pantalla de autenticación del usuario.
 
-Al seleccionarla se ejecuta logout() y la aplicación retorna a la pantalla de inicio de sesión.
+![Login](docs/screenshots/login.png)
 
-El flujo principal es:
+---
 
-Inicio de sesión
-       │
-       ▼
-Validación de credenciales
-       │
-       ├── Incorrectas ──► Mensaje de error
-       │
-       └── Correctas
-              │
-              ▼
-          Dashboard
-              │
-              ▼
-        Cerrar sesión
-              │
-              ▼
-      Pantalla de Login
+## Dashboard
 
-📊 Dashboard
+Panel principal con indicadores de gestión.
 
-El Dashboard constituye la pantalla principal después de la autenticación.
+![Dashboard](docs/screenshots/dashboard.png)
 
-Presenta:
+---
 
-Total de pedidos.
+## Listado de pedidos
 
-Pedidos pendientes.
+Permite consultar los pedidos registrados y su estado.
 
-Ventas totales.
+![Listado de pedidos](docs/screenshots/pedidos.png)
 
-Productos vendidos.
+---
 
-Pedidos entregados.
+## Crear pedido
 
-Pedidos pendientes.
+Formulario para registrar nuevos pedidos.
 
-Últimos pedidos registrados.
+![Crear pedido](docs/screenshots/crear-pedido.png)
 
-Acciones rápidas.
+---
 
-Acciones rápidas
+## Detalle / edición del pedido
 
-Desde el Dashboard se puede acceder directamente a:
+Permite consultar y modificar la información del pedido.
 
-Nuevo Pedido.
+![Detalle del pedido](docs/screenshots/detalle-pedido.png)
 
-Ver Pedidos.
+---
 
-Clientes.
+## Detalle del Cliente
 
-Productos.
+Pantalla destinada a la información del cliente.
 
-Categorías.
+![Perfil](docs/screenshots/perfil.png)
 
-Los indicadores se actualizan mediante DashboardContext y los casos de uso correspondientes.
+---
 
-👥 Gestión de clientes
+## Cerrar sesión
 
-El módulo de clientes permite administrar la información de los clientes.
+La aplicación permite cerrar la sesión y regresar al Login.
 
-Operaciones
+![Cerrar sesión](docs/screenshots/cerrar-sesion.png)
 
-Crear cliente.
+---
 
-Consultar clientes.
+# 🏗️ Arquitectura
 
-Consultar detalle.
+La solución está organizada en dos componentes principales:
 
-Editar cliente.
+```text
+                         CRAFTFLOW
+                             │
+              ┌──────────────┴──────────────┐
+              │                             │
+              ▼                             ▼
+      📱 Aplicación móvil              🌐 API REST
+       React Native + Expo           Node.js + Express
+              │                             │
+              ▼                             ▼
+          SQLite                       Puerto 3000
+              │                             │
+              └──────────────┬──────────────┘
+                             │
+                       Sincronización
+                             │
+                             ▼
+                      Datos de negocio
+```
 
-Eliminar cliente.
+### Componentes
 
-La información contempla los datos definidos por la entidad Cliente.
+| Componente | Tecnología |
+|---|---|
+| Aplicación móvil | React Native |
+| Framework | Expo |
+| Lenguaje | TypeScript |
+| Navegación | React Navigation |
+| Persistencia local | SQLite |
+| API | Node.js + Express |
+| Formato de intercambio | JSON |
+| Plataforma objetivo | Android |
+| Generación APK | EAS Build |
 
-📦 Gestión de productos
+---
 
-El módulo de productos permite administrar el catálogo comercial.
+# 🛠️ Tecnologías utilizadas
 
-Operaciones
+## Frontend / Mobile
 
-Crear producto.
+- React Native
+- Expo
+- TypeScript
+- React Navigation
+- Expo SQLite
 
-Consultar productos.
+## Backend
 
-Consultar detalle.
+- Node.js
+- Express.js
+- JavaScript
+- API REST
+- JSON
 
-Editar producto.
+## Herramientas
 
-Eliminar producto.
+- Git
+- GitHub
+- Visual Studio Code
+- Android Studio
+- Expo Go
+- EAS
 
-Los productos manejan información como:
+---
 
-Nombre.
+# 🗄️ Persistencia local
 
-Precio.
+CraftFlow utiliza **SQLite** para almacenar información localmente.
 
-Categoría.
+### Entidades principales
 
-Los productos se relacionan con las categorías mediante categoriaId.
-
-🗂️ Gestión de categorías
-
-El módulo de categorías permite organizar los productos del emprendimiento.
-
-Operaciones
-
-Crear categoría.
-
-Consultar categorías.
-
-Consultar detalle.
-
-Editar categoría.
-
-Eliminar categoría.
-
-🛒 Gestión de pedidos
-
-El módulo de pedidos permite registrar y administrar las ventas realizadas.
-
-Cada pedido maneja:
-
-Cliente.
-
-Producto.
-
-Cantidad.
-
-Precio unitario.
-
-Total.
-
-Estado.
-
-Fecha.
-
-Estados disponibles
-
-PENDIENTE
-EN_PROCESO
-ENTREGADO
-CANCELADO
-
-Cálculo del pedido
-
-El total se calcula mediante:
-
-Total = Cantidad × Precio Unitario
-
-El precio unitario se obtiene a partir del producto seleccionado.
-
-Operaciones
-
-Crear pedido.
-
-Consultar pedidos.
-
-Consultar detalle.
-
-Editar pedido.
-
-Eliminar pedido.
-
-🗄️ Persistencia de datos
-
-CraftFlow utiliza SQLite mediante expo-sqlite.
-
-La base de datos se abre mediante:
-
-craftflow.db
-
-Las principales tablas son:
-
-clientes
-categorias
-productos
-pedidos
-
-Relaciones principales
-
-CATEGORÍAS
-     │
-     │ 1:N
-     ▼
-PRODUCTOS
-     │
-     │ 1:N
-     ▼
-PEDIDOS
-     ▲
-     │ N:1
-     │
-CLIENTES
-
-Los pedidos relacionan:
-
-clienteId → clientes.id
-
-productoId → productos.id
-
-Los productos relacionan:
-
-categoriaId → categorias.id
-
-🔄 Migraciones de base de datos
-
-El proyecto incluye lógica de inicialización y actualización incremental de SQLite en:
-
-src/database/migrations.ts
-
-La aplicación:
-
-Crea las tablas si no existen.
-
-Comprueba las columnas existentes.
-
-Agrega columnas faltantes.
-
-Mantiene los datos existentes cuando corresponde.
-
-Muestra en consola la estructura final de la tabla de pedidos.
-
-Esto permite evolucionar la estructura de la base de datos sin depender exclusivamente de una recreación completa.
-
-🏗️ Arquitectura
-
-El proyecto utiliza una organización basada en Clean Architecture, separando responsabilidades entre dominio, infraestructura, presentación y servicios.
-
-src/
-│
-├── core/
-│   ├── utils/
-│   └── validators/
-│
-├── database/
-│   ├── database.ts
-│   ├── migrations.ts
-│   └── tables.ts
-│
-├── domain/
-│   ├── entities/
-│   ├── repositories/
-│   └── usecases/
-│
-├── infrastructure/
-│   └── database/
-│       ├── ClienteSQLiteRepository.ts
-│       ├── CategoriaSQLiteRepository.ts
-│       ├── ProductoSQLiteRepository.ts
-│       └── PedidoSQLiteRepository.ts
-│
-├── presentation/
-│   ├── components/
-│   ├── context/
-│   ├── hooks/
-│   ├── navigation/
-│   ├── screens/
-│   └── theme/
-│
-└── services/
-
-🧠 Capa Domain
-
-La capa domain contiene las reglas principales del negocio.
-
-Incluye:
-
-Entidades.
-
-Interfaces de repositorios.
-
-Casos de uso.
-
-Entre los casos de uso implementados se encuentran:
-
+```text
 Clientes
-
-CreateCliente
-GetCliente
-GetClientes
-UpdateCliente
-DeleteCliente
-
-Productos
-
-CreateProducto
-GetProducto
-GetProductos
-UpdateProducto
-DeleteProducto
-
 Categorías
-
-CreateCategoria
-GetCategoria
-GetCategorias
-UpdateCategoria
-DeleteCategoria
-
+Productos
 Pedidos
+```
 
-CreatePedido
-GetPedido
-GetPedidos
-UpdatePedido
-DeletePedido
-GetDashboardSummary
-GetLatestPedidos
-GetBusinessSummary
+### Tabla `pedidos`
 
-🏛️ Capa Infrastructure
+La tabla de pedidos utiliza los siguientes campos:
 
-La infraestructura implementa los contratos definidos por el dominio.
+```text
+id
+clienteId
+productoId
+cantidad
+precioUnitario
+total
+estado
+fecha
+```
 
-Para SQLite se encuentran:
+### Evidencia SQLite
 
-ClienteSQLiteRepository
-CategoriaSQLiteRepository
-ProductoSQLiteRepository
-PedidoSQLiteRepository
+![SQLite](docs/screenshots/sqlite.png)
 
-Estas clases encapsulan las operaciones de persistencia.
+---
 
-🖥️ Capa Presentation
+# 🌐 API REST
 
-La capa de presentación contiene la interfaz y la interacción con el usuario.
+CraftFlow incorpora una API REST desarrollada con **Node.js + Express**.
 
-Incluye:
+## URL base
 
-components/
-context/
-hooks/
-navigation/
-screens/
-theme/
+```text
+http://localhost:3000
+```
 
-Contextos principales
+## Health Check
 
-AuthContext
-DashboardContext
-PedidoContext
-ClienteContext
-ProductoContext
-CategoriaContext
+```http
+GET /api/health
+```
 
-AuthContext administra:
+Respuesta:
 
-Usuario autenticado.
+```json
+{
+  "status": "ok",
+  "service": "CraftFlow API REST",
+  "version": "1.0.0"
+}
+```
 
-Estado de autenticación.
+---
 
-Estado de carga.
+## Endpoints
 
-Inicio de sesión.
+### Clientes
 
-Cierre de sesión.
+```http
+GET /api/clientes
+```
 
-Los demás contextos gestionan el estado y operaciones de cada módulo.
+### Categorías
 
-🧭 Navegación
+```http
+GET /api/categorias
+```
 
-La navegación utiliza:
+### Productos
 
-@react-navigation/native
+```http
+GET /api/productos
+```
 
-@react-navigation/native-stack
+### Pedidos
 
-El RootNavigator controla el acceso principal:
+```http
+GET /api/pedidos
+```
 
-                    RootNavigator
-                         │
-                ¿Autenticado?
-                   /          \
-                 NO            SÍ
-                 │              │
-                 ▼              ▼
-             LoginScreen    AppNavigator
-                                │
-                                ▼
-                              Home
-                                │
-              ┌─────────────────┼─────────────────┐
-              ▼                 ▼                 ▼
-           Pedidos           Clientes          Productos
-              │                                   │
-              ▼                                   ▼
-          Categorías                         Detalles/CRUD
+### Dashboard
 
-🧩 Componentes reutilizables
+```http
+GET /api/dashboard
+```
 
-El proyecto dispone de componentes comunes para mantener consistencia visual y reducir duplicación.
+---
 
-Entre ellos:
+## Evidencia de API REST
 
-AppButton
-AppInput
-AppSelect
-AppText
-AppCard
-AppHeader
-AppSnackbar
-LoadingOverlay
-Loader
-MoneyCard
-ConfirmDialog
-EmptyState
+![API REST](docs/screenshots/api-rest.png)
 
-También existen componentes específicos para:
+---
 
-ClienteCard
-ClienteForm
+# 📡 Ejemplo de respuesta del Dashboard
 
-ProductoCard
-ProductoForm
+```json
+{
+  "totalPedidos": 5,
+  "pedidosPendientes": 4,
+  "pedidosEntregados": 1,
+  "ventasTotales": 375,
+  "productosVendidos": 9
+}
+```
 
-CategoriaCard
-CategoriaForm
+---
 
-PedidoCard
-PedidoForm
+# 📱 Ejecución en Android
 
-🎨 Sistema de diseño
+La aplicación fue preparada para ejecutarse en Android mediante Expo.
 
-La interfaz utiliza un Theme centralizado ubicado en:
+### Iniciar aplicación
 
-src/presentation/theme
+Desde la raíz del proyecto:
 
-Se manejan elementos como:
+```bash
+npm install
+```
 
-Colors
-Spacing
-Radius
-Typography
-Shadows
+Luego:
 
-Esto permite mantener una identidad visual consistente entre las pantallas.
+```bash
+npx expo start
+```
 
-🛠️ Tecnologías utilizadas
+Para limpiar la caché de Metro:
 
-Tecnología
+```bash
+npx expo start --clear
+```
 
-Uso
+---
 
-React Native
+# 🌐 Ejecutar la API REST
 
-Desarrollo de la aplicación móvil
+Ingresar a la carpeta:
 
-Expo SDK 54
+```bash
+cd api
+```
 
-Plataforma de desarrollo y ejecución
+Instalar dependencias:
 
-TypeScript
+```bash
+npm install
+```
 
-Tipado estático
+Iniciar el servidor:
 
-SQLite
+```bash
+npm start
+```
 
-Persistencia local
+La API quedará disponible en:
 
-expo-sqlite
+```text
+http://localhost:3000
+```
 
-Integración de SQLite
+---
 
-React Navigation
+# 🔄 Pruebas de API
 
-Navegación
+Una vez iniciada la API se pueden probar los siguientes endpoints:
 
-Context API
+```text
+http://localhost:3000/api/health
 
-Gestión de estado
+http://localhost:3000/api/clientes
 
-useState / useEffect
+http://localhost:3000/api/categorias
 
-Estado y ciclo de vida
+http://localhost:3000/api/productos
 
-Expo Vector Icons
+http://localhost:3000/api/pedidos
 
-Iconografía
+http://localhost:3000/api/dashboard
+```
 
-Safe Area Context
+---
 
-Adaptación a áreas seguras
+# 📦 Generación del APK
 
-React Native Picker
+CraftFlow incluye configuración para generar una versión APK para Android mediante EAS.
 
-Selectores
+Ejecutar:
 
-Snackbar
+```bash
+npx eas build --platform android --profile preview
+```
 
-Notificaciones
+El perfil `preview` está destinado a generar una versión instalable de prueba.
 
-Clean Architecture
+---
 
-Organización arquitectónica
+# 📸 Evidencias del proyecto
 
-Versiones principales del proyecto:
+Las evidencias visuales se almacenan dentro de:
 
-Expo: ~54.0.35
-React: 19.1.0
-React Native: 0.81.5
-TypeScript: ~5.9.2
+```text
+docs/screenshots/
+```
 
-📂 Estructura del proyecto
+### Evidencias mínimas
 
+| N.º | Evidencia | Archivo |
+|---:|---|---|
+| 1 | Login | `login.png` |
+| 2 | Dashboard | `dashboard.png` |
+| 3 | Listado de pedidos | `pedidos.png` |
+| 4 | Crear pedido | `crear-pedido.png` |
+| 5 | Detalle / edición | `detalle-pedido.png` |
+| 6 | Perfil de usuario | `perfil.png` |
+| 7 | Cerrar sesión | `cerrar-sesion.png` |
+| 8 | API REST | `api-rest.png` |
+| 9 | SQLite | `sqlite.png` |
+| 10 | Aplicación Android | `android.png` |
+| 11 | Servidor API | `api-server.png` |
+
+---
+
+# 📁 Estructura del proyecto
+
+```text
 CraftFlow/
+│
+├── api/
+│   ├── data/
+│   ├── package.json
+│   ├── server.js
+│   └── README.md
 │
 ├── assets/
 │
 ├── src/
-│   ├── core/
-│   │   ├── utils/
-│   │   └── validators/
-│   │
+│   ├── components/
 │   ├── database/
-│   │   ├── database.ts
-│   │   ├── migrations.ts
-│   │   └── tables.ts
-│   │
-│   ├── domain/
-│   │   ├── entities/
-│   │   ├── repositories/
-│   │   └── usecases/
-│   │
-│   ├── infrastructure/
-│   │   └── database/
-│   │
-│   ├── presentation/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── hooks/
-│   │   ├── navigation/
-│   │   ├── screens/
-│   │   └── theme/
-│   │
-│   └── services/
+│   ├── navigation/
+│   ├── screens/
+│   ├── services/
+│   └── ...
+│
+├── docs/
+│   └── screenshots/
+│       ├── login.png
+│       ├── dashboard.png
+│       ├── pedidos.png
+│       ├── crear-pedido.png
+│       ├── detalle-pedido.png
+│       ├── perfil.png
+│       ├── cerrar-sesion.png
+│       ├── api-rest.png
+│       ├── sqlite.png
+│       ├── android.png
+│       └── api-server.png
 │
 ├── App.tsx
 ├── app.json
-├── babel.config.js
-├── metro.config.js
+├── eas.json
+├── index.ts
 ├── package.json
 ├── package-lock.json
-└── tsconfig.json
-
-⚙️ Requisitos
-
-Antes de ejecutar el proyecto se requiere tener instalado:
-
-Node.js.
-
-npm.
-
-Expo CLI mediante el proyecto Expo.
-
-Android Studio para ejecutar un emulador Android, o un dispositivo compatible.
-
-Git para gestionar el repositorio.
-
-🚀 Instalación
-
-1. Clonar el repositorio
-
-git clone https://github.com/santiman0408-sudo/CraftFlow.git
-
-Ingresar al proyecto:
-
-cd CraftFlow
-
-2. Instalar dependencias
-
-npm install
-
-3. Ejecutar Expo
-
-npx expo start
-
-Android
-
-npx expo start --android
-
-iOS
-
-npx expo start --ios
-
-Web
-
-npx expo start --web
-
-🧪 Verificación TypeScript
-
-Para comprobar que el proyecto no presenta errores de compilación TypeScript:
-
-npx tsc --noEmit
-
-El proyecto fue verificado durante el desarrollo mediante este comando.
-
-📱 Flujo de uso
-
-1. Abrir CraftFlow
-        │
-        ▼
-2. Iniciar sesión
-        │
-        ▼
-3. Dashboard
-        │
-        ├── Nuevo Pedido
-        ├── Ver Pedidos
-        ├── Clientes
-        ├── Productos
-        └── Categorías
-        │
-        ▼
-4. Gestionar información
-        │
-        ▼
-5. Consultar indicadores
-        │
-        ▼
-6. Cerrar sesión
-        │
-        ▼
-7. Volver al Login
-
-📷 Capturas de pantalla
-
-Nota: el proyecto analizado contiene los recursos principales de la aplicación, pero el ZIP proporcionado no incluye una carpeta assets/screenshots/. Cuando se agreguen las capturas reales al repositorio, utilizar estas rutas.
-
-🔐 Inicio de sesión
-
-
-
-📊 Dashboard
-
-
-
-👥 Clientes
-
-
-
-📦 Productos
-
-
-
-🗂️ Categorías
-
-
-
-🛒 Pedidos
-
-
-
-📌 Estado del proyecto
-
-Versión: 1.0.0
-Estado: Proyecto funcional
-
-Funcionalidades implementadas:
-
-Autenticación
-
-Inicio de sesión
-
-Cierre de sesión
-
-Dashboard
-
-CRUD de clientes
-
-CRUD de productos
-
-CRUD de categorías
-
-CRUD de pedidos
-
-Persistencia SQLite
-
-Indicadores del negocio
-
-Últimos pedidos
-
-Validaciones
-
-Snackbar de notificaciones
-
-Confirmaciones
-
-Componentes reutilizables
-
-Arquitectura organizada por capas
-
-🔒 Consideraciones de seguridad
-
-La autenticación incluida actualmente es de carácter local y académico.
-
-Las credenciales se encuentran definidas directamente en AuthContext.tsx:
-
-Usuario: admin
-Contraseña: CraftFlow2026
-
-Para un entorno productivo se recomienda reemplazar este mecanismo por una autenticación segura con backend, almacenamiento seguro de credenciales, gestión de sesiones y políticas de autorización.
-
-🌐 Funcionamiento offline
-
-Las operaciones principales de gestión de clientes, productos, categorías y pedidos utilizan SQLite local.
-
-Por esta razón, el funcionamiento de los módulos de negocio no depende de una API remota.
-
-Aplicación móvil
-      │
-      ▼
-Context API
-      │
-      ▼
-Casos de uso
-      │
-      ▼
-Repositorios SQLite
-      │
-      ▼
-craftflow.db
-
-👨‍💻 Autores
-
-Adrian Daniel Santisteban Manrique
-
-Maria Alejandra Siri Vergara
-
-Jean Paul Villasante Contreras
-
-Instituto IDAT
-
-Carrera: Desarrollo de Sistemas Front-end y Back-end
-
-Curso: Desarrollo de Aplicaciones Móviles 1
-
-📄 Licencia
-
-Proyecto desarrollado con fines académicos.
-
+├── tsconfig.json
+└── README.md
+```
 
 ---
 
-# Extensiones incorporadas: API REST y APK
+# 🧪 Datos de prueba
 
-## API REST
+Para validar el funcionamiento de la aplicación se pueden utilizar registros de prueba para:
 
-Se incorporó una API REST independiente en `api/`. Su objetivo es añadir una capa backend sin modificar el contenido funcional de la aplicación móvil existente.
+- 5 categorías.
+- 5 clientes.
+- 5 productos.
+- 5 pedidos.
 
-Recursos disponibles: autenticación, clientes, productos, categorías, pedidos, dashboard y health check.
+Ejemplo de productos:
 
-La aplicación móvil conserva SQLite como persistencia principal. La API utiliza `api/data/craftflow.json` de forma independiente, por lo que no sobrescribe ni transforma `craftflow.db`.
+| Producto | Categoría | Precio |
+|---|---|---:|
+| Chullo tejido de alpaca | Tejidos | S/ 50.00 |
+| Cartera artesanal de cuero | Cuero | S/ 120.00 |
+| Florero decorativo de cerámica | Cerámica Decorativa | S/ 75.00 |
+| Cuadro andino artesanal | Arte Andino | S/ 95.00 |
+| Collar artesanal de semillas | Accesorios | S/ 40.00 |
 
-También se añadió un cliente HTTP reutilizable en `src/services/api/api.client.ts` y su configuración en `src/services/api/api.config.ts`. Estos módulos quedan disponibles para una integración progresiva y no reemplazan el flujo SQLite actual.
+---
 
-## APK Android
+# 🔒 Seguridad
 
-Se añadió `eas.json` con un perfil `preview` configurado para generar un APK Android instalable.
+El proyecto utiliza un archivo `.gitignore` para evitar subir archivos innecesarios o sensibles al repositorio.
 
-Windows:
+Entre ellos:
 
-```bash
-build-apk.bat
+```text
+node_modules/
+.env
+.env*.local
+.expo/
+*.db
+*.sqlite
 ```
 
-macOS/Linux:
+No se deben almacenar credenciales, contraseñas, tokens o claves privadas dentro del repositorio.
+
+---
+
+# 🚀 Flujo de trabajo Git
+
+Clonar el proyecto:
 
 ```bash
-./build-apk.sh
+git clone https://github.com/santiman0408-sudo/CraftFlow2026.git
 ```
 
-O:
+Entrar al proyecto:
 
 ```bash
-npx eas-cli@latest build --platform android --profile preview
+cd CraftFlow2026
 ```
 
-La configuración conserva el package Android `com.craftflow.app`, Expo SDK 54, React Native 0.81.5, SQLite, iconos, splash, orientación y las pantallas originales.
+Instalar dependencias:
 
-**Nota:** el APK binario no puede generarse dentro de este entorno porque el proyecto no dispone de Android SDK/EAS autenticado. El ZIP queda preparado para producirlo mediante EAS Build sin modificar el contenido de la aplicación.
+```bash
+npm install
+```
 
+Crear una rama para trabajar:
 
-## API REST complementaria
+```bash
+git checkout -b feature/nueva-funcionalidad
+```
 
-CraftFlow incorpora una API REST Node.js/HTTP independiente en `api/`. SQLite continúa siendo la persistencia principal de la aplicación móvil. Al iniciar y después de operaciones CRUD, CraftFlow sincroniza una copia de los datos locales mediante `POST /api/sync`, sin modificar las pantallas ni el flujo de usuario.
+Guardar cambios:
 
-Para el emulador Android, la configuración actual utiliza `http://10.0.2.2:3000/api`. Para un dispositivo físico, reemplazar `10.0.2.2` por la IP local del equipo que ejecuta la API.
+```bash
+git add .
+```
+
+Crear commit:
+
+```bash
+git commit -m "feat: nueva funcionalidad"
+```
+
+Subir cambios:
+
+```bash
+git push origin feature/nueva-funcionalidad
+```
+
+---
+
+# 👥 Trabajo colaborativo
+
+El proyecto se encuentra alojado en GitHub y puede utilizarse como repositorio colaborativo.
+
+Repositorio:
+
+**CraftFlow2026**
+
+Los colaboradores pueden trabajar mediante ramas independientes y posteriormente integrar sus cambios a `main`.
+
+Flujo recomendado:
+
+```text
+main
+ │
+ ├── feature/clientes
+ │
+ ├── feature/productos
+ │
+ ├── feature/pedidos
+ │
+ └── feature/api-rest
+```
+
+---
+
+# 📋 Requisitos del sistema
+
+Para ejecutar el proyecto se recomienda disponer de:
+
+- Node.js
+- npm
+- Expo CLI / Expo
+- Android Studio para emulación Android
+- Git
+- GitHub
+- Dispositivo Android o emulador Android
+
+---
+
+# ⚙️ Requisitos previos
+
+Comprobar Node.js:
+
+```bash
+node --version
+```
+
+Comprobar npm:
+
+```bash
+npm --version
+```
+
+Comprobar Git:
+
+```bash
+git --version
+```
+
+---
+
+# 📊 Estado del proyecto
+
+| Funcionalidad | Estado |
+|---|:---:|
+| Login | ✅ |
+| Dashboard | ✅ |
+| Clientes | ✅ |
+| Categorías | ✅ |
+| Productos | ✅ |
+| Pedidos | ✅ |
+| Crear pedido | ✅ |
+| Editar / detalle | ✅ |
+| SQLite | ✅ |
+| API REST | ✅ |
+| Sincronización API | ✅ |
+| Android | ✅ |
+| Configuración APK | ✅ |
+| GitHub | ✅ |
+
+---
+
+# 👨‍💻 Proyecto
+
+**Nombre:** CraftFlow  
+**Repositorio:** CraftFlow2026  
+**Plataforma:** Android  
+**Framework:** React Native + Expo  
+**Lenguaje:** TypeScript  
+**Backend:** Node.js + Express  
+**Base de datos local:** SQLite  
+**API:** REST
+
+---
+
+## 📄 Licencia
+
+Proyecto desarrollado con fines académicos.
