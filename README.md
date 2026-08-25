@@ -107,6 +107,12 @@ El dashboard permite visualizar indicadores como:
 
 Pantalla de autenticación del usuario.
 
+Las credenciales configuradas actualmente en el proyecto son:
+
+Usuario: admin
+
+Contraseña: CraftFlow2026
+
 ![Login](docs/screenshots/login.png)
 
 ---
@@ -143,13 +149,6 @@ Permite consultar y modificar la información del pedido.
 
 ---
 
-## Detalle del Cliente
-
-Pantalla destinada a la información del cliente.
-
-![Perfil](docs/screenshots/perfil.png)
-
----
 
 ## Cerrar sesión
 
@@ -255,11 +254,6 @@ total
 estado
 fecha
 ```
-
-### Evidencia SQLite
-
-![SQLite](docs/screenshots/sqlite.png)
-
 ---
 
 # 🌐 API REST
@@ -321,12 +315,6 @@ GET /api/pedidos
 ```http
 GET /api/dashboard
 ```
-
----
-
-## Evidencia de API REST
-
-![API REST](docs/screenshots/api-rest.png)
 
 ---
 
